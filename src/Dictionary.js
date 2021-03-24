@@ -13,6 +13,7 @@ export default function Dictionary() {
         onChange={handlekeyword}
       />
       <input type="submit" value="Search" />
+      {keyword}
     </form>
   );
 }
