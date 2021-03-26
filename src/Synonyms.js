@@ -4,17 +4,14 @@ export default function Synonyms(props) {
   if (props.synonyms) {
     return (
       <div className="synonyms">
-        Similar :
+        Similar :{" "}
         {props.synonyms.map(function (synomyns, index) {
           return (
-            <span key={index}>
-              {" "}
-              {synomyns}
-              {", "}
+            <span key={index} className="similar">
+              {synomyns}{" "}
             </span>
           );
         })}
-        {"."}
       </div>
     );
   } else {

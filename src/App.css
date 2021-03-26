@@ -1,12 +1,32 @@
 .App {
   text-align: center;
+  margin-top: 20px;
 }
 body {
   background-image: url(./livre.jpg);
   background-size: cover;
 }
-.container {
-  margin: 10px;
+section {
+  border-radius: 5px;
+  margin: 10px 50px;
   padding: 10px;
-  background-color: rgba(245, 245, 236, 0.6);
+  background-color: rgba(245, 245, 236, 0.7);
+  box-shadow: 3px 5px 5px rgba(175, 175, 167, 0.829);
+}
+form {
+  border-radius: 20px;
+}
+.similar {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 5px 10px;
+  background-color: rgba(245, 245, 236, 0.8);
+}
+.example {
+}
+.synonyms {
+  font-size: smaller;
+  color: rgb(75, 75, 75);
 }

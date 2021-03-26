@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Dictionary </h1>
         <br />
+        <h2>What are you looking for?</h2>
         <Dictionary />
       </header>
     </div>

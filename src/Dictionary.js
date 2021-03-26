@@ -18,16 +18,18 @@ export default function Dictionary() {
     axios.get(apiUrl).then(displayDefinition);
   }
   return (
-    <form onSubmit={search}>
-      <input
-        type="search"
-        placeholder="Enter a word"
-        onChange={handlekeyword}
-      />
-      <input type="submit" value="Search" />
-      <br />
-      <br />
+    <span className="container">
+      <section>
+        <form onSubmit={search}>
+          <input
+            className="form-control"
+            type="search"
+            placeholder="Enter a word"
+            onChange={handlekeyword}
+          />
+        </form>
+      </section>
       <Keyword data={definition} />
-    </form>
+    </span>
   );
 }
