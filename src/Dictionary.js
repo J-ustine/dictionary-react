@@ -45,6 +45,10 @@ export default function Dictionary() {
       </section>
       <Keyword data={definition} />
       <Photos photos={photos} keyword={keyword} />
+      Coded by{" "}
+      <a href="https://github.com/J-ustine" target="_blank" rel="noreferrer">
+        Justine Collache
+      </a>
     </span>
   );
 }
