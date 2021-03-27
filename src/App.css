@@ -24,9 +24,10 @@ form {
   padding: 5px 10px;
   background-color: rgba(245, 245, 236, 0.8);
 }
-.example {
-}
 .synonyms {
   font-size: smaller;
   color: rgb(75, 75, 75);
+}
+img {
+  padding: 0 0px 15px 0;
 }

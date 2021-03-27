@@ -3,17 +3,15 @@ import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
 
 export default function Keyword(props) {
-  console.log(props.data);
   if (props.data !== null) {
     return (
-      <div>
+      <span>
         <section>
           <h1 className="text-capitalize">{props.data.word}</h1>
           <Phonetics data={props.data} />
         </section>
         <Meaning data={props.data} />
-        <br />
-      </div>
+      </span>
     );
   } else {
     return null;
