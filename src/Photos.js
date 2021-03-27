@@ -11,7 +11,7 @@ export default function Photos(props) {
                 href={photos.src.original}
                 target="_blank"
                 rel="noreferrer"
-                className="col-4-lg col-12-sm"
+                className="col-lg-4 col-md-sm-12"
               >
                 <img key={index} alt={props.keyword} src={photos.src.tiny} />
               </a>
