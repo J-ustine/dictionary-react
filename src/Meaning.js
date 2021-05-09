@@ -14,7 +14,8 @@ export default function Meaning(props) {
             <br />
             <Synonyms
               synonyms={definitions.synonyms}
-              similar={props.similar}
+              similarMouseOver={props.similarMouseOver}
+              similarMouseOut={props.similarMouseOut}
               search={props.search}
             />
           </div>

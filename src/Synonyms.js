@@ -17,7 +17,8 @@ export default function Synonyms(props) {
               value={synomyns}
               className="similar"
               onClick={props.search}
-              onMouseEnter={props.similar}
+              onMouseOver={props.similarMouseOver}
+              onMouseLeave={props.similarMouseOut}
             >
               {synomyns}{" "}
             </button>

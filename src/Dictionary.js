@@ -4,7 +4,7 @@ import Keyword from "./Keyword";
 import Photos from "./Photos";
 
 export default function Dictionary() {
-  const [keyword, setKeyword] = useState(null);
+  const [keyword, setKeyword] = useState("");
   const [definition, setDefinition] = useState(null);
   const [photos, setPhotos] = useState(null);
   const [languague, setLanguague] = useState("en_US");
@@ -22,7 +22,7 @@ export default function Dictionary() {
 
   function defineLanguague(event) {
     event.preventDefault();
-    const languague = event.target.childNodes[0].data;
+    const languague = event.target.value;
     if (languague === "English") {
       setLanguague("en_US");
       setPlaceholder("Enter a word");
@@ -35,10 +35,15 @@ export default function Dictionary() {
         setPlaceholder("Introduce una palabra");
       }
     }
+    setKeyword("");
   }
 
-  function similar(event) {
+  function similarMouseOver(event) {
     setKeyword(event.target.value);
+  }
+
+  function similarMouseOut() {
+    setKeyword("");
   }
 
   function search(event) {
@@ -57,58 +62,54 @@ export default function Dictionary() {
     <span className="container">
       <section>
         <form onSubmit={search}>
-          <div className="input-group mb-3">
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+          <div class="input-group row">
+            <div
+              className="btn-group col-4"
+              role="group"
+              aria-label="Basic example"
             >
-              Languague
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="www.google.com"
-                  onClick={defineLanguague}
-                >
-                  English
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="www.google.com"
-                  onClick={defineLanguague}
-                >
-                  Français
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="www.google.com"
-                  onClick={defineLanguague}
-                >
-                  Español
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-            </ul>
+              <button
+                type="button"
+                className="btn btn-light"
+                value="English"
+                onClick={defineLanguague}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                className="btn btn-light"
+                value="Español"
+                onClick={defineLanguague}
+              >
+                Español
+              </button>
+              <button
+                type="button"
+                className="btn btn-light"
+                value="Français"
+                onClick={defineLanguague}
+              >
+                Français
+              </button>
+            </div>
             <input
               type="text"
-              className="form-control"
+              className="form-control col-8"
               placeholder={placeholder}
+              value={keyword}
               onChange={handlekeyword}
               aria-label="Text input with dropdown button"
             />
           </div>
         </form>
       </section>
-      <Keyword data={definition} similar={similar} search={search} />
+      <Keyword
+        data={definition}
+        similarMouseOver={similarMouseOver}
+        similarMouseOut={similarMouseOut}
+        search={search}
+      />
       <Photos photos={photos} keyword={keyword} />
       Coded by{" "}
       <a href="https://github.com/J-ustine" target="_blank" rel="noreferrer">
