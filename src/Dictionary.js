@@ -21,7 +21,8 @@ export default function Dictionary() {
   }
 
   function defineLanguague(event) {
-    const languague = event.target.nextSibling.nextSibling.data;
+    event.preventDefault();
+    const languague = event.target.childNodes[0].data;
     if (languague === "English") {
       setLanguague("en_US");
       setPlaceholder("Enter a word");
@@ -34,6 +35,10 @@ export default function Dictionary() {
         setPlaceholder("Introduce una palabra");
       }
     }
+  }
+
+  function similar(event) {
+    setKeyword(event.target.value);
   }
 
   function search(event) {
@@ -52,50 +57,58 @@ export default function Dictionary() {
     <span className="container">
       <section>
         <form onSubmit={search}>
-          <div className="btn-group btn-group-toggle" data-toggle="buttons">
-            <label className="btn btn-light active form-label">
-              <input
-                type="radio"
-                name="options"
-                id="option1"
-                autoComplete="off"
-                checked
-                readOnly
-                onClick={defineLanguague}
-              />{" "}
-              English
-            </label>
-            <label className="btn btn-light form-label">
-              <input
-                type="radio"
-                name="options"
-                id="option2"
-                autoComplete="off"
-                onClick={defineLanguague}
-              />{" "}
-              Français
-            </label>
-            <label className="btn btn-light form-label">
-              <input
-                type="radio"
-                name="options"
-                id="option3"
-                autoComplete="off"
-                onClick={defineLanguague}
-              />{" "}
-              Español
-            </label>
+          <div className="input-group mb-3">
+            <button
+              className="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Languague
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="www.google.com"
+                  onClick={defineLanguague}
+                >
+                  English
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="www.google.com"
+                  onClick={defineLanguague}
+                >
+                  Français
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="www.google.com"
+                  onClick={defineLanguague}
+                >
+                  Español
+                </a>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+            </ul>
             <input
               type="text"
               className="form-control"
               placeholder={placeholder}
-              aria-label="Example text with two button addons"
               onChange={handlekeyword}
+              aria-label="Text input with dropdown button"
             />
           </div>
         </form>
       </section>
-      <Keyword data={definition} />
+      <Keyword data={definition} similar={similar} search={search} />
       <Photos photos={photos} keyword={keyword} />
       Coded by{" "}
       <a href="https://github.com/J-ustine" target="_blank" rel="noreferrer">

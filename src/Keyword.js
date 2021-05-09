@@ -2,15 +2,19 @@ import React from "react";
 import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
 
-export default function Keyword({ data }) {
-  if (data !== null) {
+export default function Keyword(props) {
+  if (props.data !== null) {
     return (
       <>
         <section>
-          <h1 className="text-capitalize">{data.word}</h1>
-          <Phonetics data={data} />
+          <h1 className="text-capitalize">{props.data.word}</h1>
+          <Phonetics data={props.data} />
         </section>
-        <Meaning data={data} />
+        <Meaning
+          data={props.data}
+          similar={props.similar}
+          search={props.search}
+        />
       </>
     );
   } else {
