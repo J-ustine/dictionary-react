@@ -1,11 +1,7 @@
 import React from "react";
 
 export default function Synonyms(props) {
-  // function searchSimilar(event) {
-  //   console.log(event.target.name);
-  // }
-
-  if (props.synonyms) {
+  if (props.synonyms.length > 0) {
     return (
       <div className="synonyms">
         Similar :{" "}
