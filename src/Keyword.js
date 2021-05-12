@@ -12,6 +12,7 @@ export default function Keyword(props) {
         </section>
         <Meaning
           data={props.data}
+          languague={props.languague}
           similarMouseOver={props.similarMouseOver}
           similarMouseOut={props.similarMouseOut}
           search={props.search}

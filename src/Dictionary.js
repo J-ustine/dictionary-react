@@ -62,7 +62,7 @@ export default function Dictionary() {
     <span className="container">
       <section>
         <form onSubmit={search}>
-          <div class="input-group row">
+          <div className="input-group row">
             <div
               className="btn-group col-4"
               role="group"
@@ -106,6 +106,7 @@ export default function Dictionary() {
       </section>
       <Keyword
         data={definition}
+        languague={languague}
         similarMouseOver={similarMouseOver}
         similarMouseOut={similarMouseOut}
         search={search}
