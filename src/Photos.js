@@ -12,9 +12,13 @@ export default function Photos(props) {
                 href={photos.src.original}
                 target="_blank"
                 rel="noreferrer"
-                className="col-lg-4 col-md-sm-12"
+                className="col-lg-4 col-sm-12 col-md-6"
               >
-                <img alt={props.keyword} src={photos.src.tiny} />
+                <img
+                  alt={props.keyword}
+                  src={photos.src.tiny}
+                  className="img-keyword"
+                />
               </a>
             );
           })}

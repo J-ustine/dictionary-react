@@ -9,7 +9,11 @@ export default function Phonetics(props) {
     return (
       <div key={index}>
         <p>{phonetics.text}</p>
-        <ReactAudioPlayer src={phonetics.audio} controls />
+        <ReactAudioPlayer
+          src={phonetics.audio}
+          controls
+          className="audioPlayer"
+        />
       </div>
     );
   });

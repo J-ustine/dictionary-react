@@ -17,6 +17,9 @@ section {
 form {
   border-radius: 20px;
 }
+.input-group {
+  margin: 0;
+}
 
 .similar {
   border: 1px solid transparent;
@@ -33,15 +36,35 @@ form {
 a {
   padding: 0 0px 15px 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1100px) {
+  .img-keyword {
+    width: 240px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   body {
     background-size: 1100px;
-    background-position-x: -130px;
+    background-position-x: -300px;
   }
   section {
     margin: 10px;
   }
   a {
-    padding: 5px 0 5px 45px;
+    padding: 5px;
+  }
+  .form-control {
+    margin-top: 5px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .react-audio-player {
+    width: 254px;
+  }
+  .img-keyword {
+    width: 254px;
+  }
+  a {
+    padding: 5px 0;
   }
 }

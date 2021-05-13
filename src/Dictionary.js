@@ -64,7 +64,7 @@ export default function Dictionary() {
         <form onSubmit={search}>
           <div className="input-group row">
             <div
-              className="btn-group col-4"
+              className="btn-group col-lg-4 col-md-sm-11"
               role="group"
               aria-label="Basic example"
             >
@@ -95,7 +95,7 @@ export default function Dictionary() {
             </div>
             <input
               type="text"
-              className="form-control col-8"
+              className="form-control col-lg-8 col-md-sm-12"
               placeholder={placeholder}
               value={keyword}
               onChange={handlekeyword}
